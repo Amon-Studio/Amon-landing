@@ -36,34 +36,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 
-  <!-- Précharge les stickers (basse priorité : pas critiques pour le premier rendu).
-       Même media query que finePointer côté JS : mobile ne joue pas l'effet,
-       donc il ne télécharge pas les images. -->
-  <link rel="preload" as="image" fetchpriority="low" href="images/01.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/02.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/03.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/04.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/05.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/06.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/07.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/08.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/09.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/10.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/11.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/12.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/13.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/14.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/15.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/16.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/17.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/18.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/19.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/20.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/21.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/22.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/23.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/24.png?v=4" media="(hover: hover) and (pointer: fine)" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/25.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <!-- Précharge les stickers (basse priorité : pas critiques pour le premier rendu) -->
+  <link rel="preload" as="image" fetchpriority="low" href="images/01.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/02.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/03.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/04.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/05.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/06.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/07.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/08.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/09.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/10.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/11.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/12.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/13.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/14.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/15.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/16.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/17.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/18.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/19.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/20.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/21.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/22.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/23.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/24.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/25.png?v=4" />
   <style>
     :root {
       --bg: #ffffff;
@@ -77,6 +75,11 @@
 
     html, body {
       height: 100%;
+      /* Le doigt sert à dessiner la traînée : il ne doit ni scroller la page
+         ni déclencher le rebond iOS. La home tient dans l'écran de toute façon.
+         (privacy.html et terms.html scrollent normalement, eux) */
+      overflow: hidden;
+      overscroll-behavior: none;
     }
 
     body {
@@ -88,6 +91,7 @@
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
+      touch-action: none;
     }
 
     /* Grain subtil sur le fond (texture SVG inline, derrière le contenu) */
@@ -265,7 +269,6 @@
   <script>
     (function () {
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
       var TOTAL = 25;                 // nombre d'images dans images/
       var ASSET_VERSION = "4";        // ↑ à incrémenter quand on remplace une image (force le rechargement, contourne le cache)
@@ -304,11 +307,10 @@
       logo.classList.add("intro-in");
 
       // ---------------------------------------------------------------
-      // EFFET INTERACTIF — traînée de stickers au mouvement de la souris
-      // (desktop uniquement : rien sur mobile, faute de pointeur fin)
+      // EFFET INTERACTIF — traînée de stickers au mouvement (souris ou doigt)
       // ---------------------------------------------------------------
       function initInteractiveEffect() {
-        if (reduce || !finePointer) return;
+        if (reduce) return;
 
         var THRESHOLD = 12;             // distance (px) à parcourir avant de poser l'image suivante — très réactif
         var LIFETIME = 2000;            // durée d'affichage de chaque image (ms)
@@ -376,9 +378,9 @@
           }, LIFETIME);
         }
 
-        window.addEventListener("mousemove", function (e) {
-          var x = e.clientX, y = e.clientY;
-
+        // Logique commune à la souris et au doigt : on pose une image dès que la
+        // distance parcourue depuis la dernière dépasse le seuil
+        function onMove(x, y) {
           // Dans la zone franche du footer : on ne pose rien, mais on suit la position
           if (y >= safeTop) { lastX = x; lastY = y; return; }
 
@@ -390,7 +392,27 @@
             lastX = x;
             lastY = y;
           }
+        }
+
+        // ---- Souris (desktop) ----
+        window.addEventListener("mousemove", function (e) {
+          onMove(e.clientX, e.clientY);
         }, { passive: true });
+
+        // ---- Doigt (mobile) ----
+        // Chaque contact repart de zéro pour poser une image sous le doigt tout
+        // de suite, sans comparer à la position du contact précédent.
+        window.addEventListener("touchstart", function (e) {
+          lastX = null;
+          onMove(e.touches[0].clientX, e.touches[0].clientY);
+        }, { passive: true });
+
+        // Non passif : preventDefault empêche le navigateur de récupérer le geste
+        // (scroll, pull-to-refresh) alors qu'il sert à dessiner.
+        window.addEventListener("touchmove", function (e) {
+          e.preventDefault();
+          onMove(e.touches[0].clientX, e.touches[0].clientY);
+        }, { passive: false });
       }
 
       initInteractiveEffect();
