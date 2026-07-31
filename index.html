@@ -36,32 +36,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 
-  <!-- Précharge les stickers (basse priorité : pas critiques pour le premier rendu) -->
-  <link rel="preload" as="image" fetchpriority="low" href="images/01.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/02.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/03.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/04.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/05.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/06.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/07.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/08.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/09.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/10.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/11.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/12.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/13.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/14.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/15.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/16.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/17.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/18.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/19.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/20.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/21.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/22.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/23.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/24.png?v=4" />
-  <link rel="preload" as="image" fetchpriority="low" href="images/25.png?v=4" />
+  <!-- Précharge les stickers (basse priorité : pas critiques pour le premier rendu).
+       Même media query que finePointer côté JS : mobile ne joue pas l'effet,
+       donc il ne télécharge pas les images. -->
+  <link rel="preload" as="image" fetchpriority="low" href="images/01.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/02.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/03.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/04.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/05.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/06.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/07.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/08.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/09.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/10.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/11.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/12.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/13.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/14.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/15.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/16.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/17.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/18.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/19.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/20.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/21.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/22.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/23.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/24.png?v=4" media="(hover: hover) and (pointer: fine)" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/25.png?v=4" media="(hover: hover) and (pointer: fine)" />
   <style>
     :root {
       --bg: #ffffff;
@@ -106,30 +108,6 @@
       align-items: center;
       justify-content: center;
       padding: 2rem;
-    }
-
-    /* Bouton d'activation du gyroscope (mobile uniquement, affiché via JS) */
-    /* Positionné en absolu sous le logo pour ne jamais influencer son centrage vertical */
-    .gyro-activate {
-      display: none;
-      position: absolute;
-      top: calc(100% + 1.5rem);
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      padding: 0.5rem 1.1rem;
-      border: 1px solid #d8d8d8;
-      border-radius: 999px;
-      background: transparent;
-      color: #8a8a8a;
-      font-family: inherit;
-      font-size: 0.8125rem;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .gyro-activate:active {
-      color: #1a1a1a;
     }
 
     /* Conteneur du logo : centré sur la fenêtre entière (pas juste l'espace
@@ -272,7 +250,6 @@
     <div class="logo-wrap">
       <h1><img class="logo" src="logo.png" alt="Amon Studio" width="900" height="676" fetchpriority="high" /></h1>
       <p class="tagline">Rebuilding social</p>
-      <button type="button" class="gyro-activate">Enter</button>
     </div>
   </main>
   <footer>
@@ -289,7 +266,6 @@
     (function () {
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-      var coarsePointer = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
       var TOTAL = 25;                 // nombre d'images dans images/
       var ASSET_VERSION = "4";        // ↑ à incrémenter quand on remplace une image (force le rechargement, contourne le cache)
@@ -328,10 +304,11 @@
       logo.classList.add("intro-in");
 
       // ---------------------------------------------------------------
-      // EFFET INTERACTIF — traînée de stickers au mouvement (souris ou gyroscope)
+      // EFFET INTERACTIF — traînée de stickers au mouvement de la souris
+      // (desktop uniquement : rien sur mobile, faute de pointeur fin)
       // ---------------------------------------------------------------
       function initInteractiveEffect() {
-        if (reduce || (!finePointer && !coarsePointer)) return;
+        if (reduce || !finePointer) return;
 
         var THRESHOLD = 12;             // distance (px) à parcourir avant de poser l'image suivante — très réactif
         var LIFETIME = 2000;            // durée d'affichage de chaque image (ms)
@@ -399,74 +376,21 @@
           }, LIFETIME);
         }
 
-        function clamp(v, min, max) { return Math.min(max, Math.max(min, v)); }
+        window.addEventListener("mousemove", function (e) {
+          var x = e.clientX, y = e.clientY;
 
-        // ---- Souris (desktop, pointeur fin) ----
-        if (finePointer) {
-          window.addEventListener("mousemove", function (e) {
-            var x = e.clientX, y = e.clientY;
+          // Dans la zone franche du footer : on ne pose rien, mais on suit la position
+          if (y >= safeTop) { lastX = x; lastY = y; return; }
 
-            // Dans la zone franche du footer : on ne pose rien, mais on suit la position
-            if (y >= safeTop) { lastX = x; lastY = y; return; }
+          if (lastX === null) { lastX = x; lastY = y; spawn(x, y); return; }
 
-            if (lastX === null) { lastX = x; lastY = y; spawn(x, y); return; }
-
-            var dx = x - lastX, dy = y - lastY;
-            if (Math.sqrt(dx * dx + dy * dy) > THRESHOLD) {
-              spawn(x, y);
-              lastX = x;
-              lastY = y;
-            }
-          }, { passive: true });
-        }
-
-        // ---- Gyroscope (mobile, pas de hover / pointeur grossier) ----
-        // Repose sur un calibrage : la position au moment de l'activation
-        // devient le centre, puis on mappe l'écart d'inclinaison sur tout
-        // l'écran (gamma = gauche/droite → x, beta = avant/arrière → y).
-        if (coarsePointer && typeof window.DeviceOrientationEvent !== "undefined") {
-          var btn = document.querySelector(".gyro-activate");
-          if (btn) {
-            btn.style.display = "inline-flex";
-            btn.addEventListener("click", function onActivate() {
-              btn.removeEventListener("click", onActivate);
-
-              function startGyro() {
-                btn.remove();
-                var RANGE = 30; // amplitude (°) depuis le calibrage pour couvrir tout l'écran
-
-                window.addEventListener("deviceorientation", function (e) {
-                  if (e.beta === null || e.gamma === null) return;
-                  if (baseBeta === null) { baseBeta = e.beta; baseGamma = e.gamma; return; }
-
-                  var nx = clamp(((e.gamma - baseGamma) + RANGE) / (RANGE * 2), 0, 1);
-                  var ny = clamp(((e.beta - baseBeta) + RANGE) / (RANGE * 2), 0, 1);
-                  var x = nx * window.innerWidth;
-                  var y = ny * window.innerHeight;
-
-                  if (y >= safeTop) { lastX = x; lastY = y; return; }
-                  if (lastX === null) { lastX = x; lastY = y; spawn(x, y); return; }
-                  var dx = x - lastX, dy = y - lastY;
-                  if (Math.sqrt(dx * dx + dy * dy) > THRESHOLD) {
-                    spawn(x, y);
-                    lastX = x;
-                    lastY = y;
-                  }
-                }, { passive: true });
-              }
-
-              var baseBeta = null, baseGamma = null;
-
-              if (typeof DeviceOrientationEvent.requestPermission === "function") {
-                DeviceOrientationEvent.requestPermission().then(function (state) {
-                  if (state === "granted") startGyro();
-                }).catch(function () {});
-              } else {
-                startGyro();
-              }
-            });
+          var dx = x - lastX, dy = y - lastY;
+          if (Math.sqrt(dx * dx + dy * dy) > THRESHOLD) {
+            spawn(x, y);
+            lastX = x;
+            lastY = y;
           }
-        }
+        }, { passive: true });
       }
 
       initInteractiveEffect();
