@@ -1,39 +1,40 @@
-## Project info
+# Amon-landing
 
-**URL**: https://amonstudio.io
+Static landing site for Amon Studio — served by GitHub Pages at **https://amonstudio.io**.
 
-## How can I edit this code?
+## Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+index.html            Home (logo + sticker trail on mouse move / gyroscope)
+privacy.html          Privacy Policy
+terms.html            Terms of Service
+404.html              Not-found page
+images/01..26.png     Stickers used by the trail effect
+logo.png              Amon wordmark
+favicon.png           Favicon
+apple-touch-icon.png  iOS home-screen icon
+CNAME                 Custom domain (amonstudio.io)
+robots.txt            Crawl rules
+sitemap.xml           Sitemap
+.nojekyll             Disables Jekyll processing
 ```
 
-## What technologies are used for this project?
+No build step, no dependencies — plain HTML/CSS/JS with inline styles and scripts.
 
-This project is built with:
+## Local preview
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+python3 -m http.server 8000
+```
 
-## How can I deploy this project?
+Then open http://localhost:8000.
 
-just push your changes in the main branch
+## Deployment
+
+Every push to `main` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml),
+which uploads the repository root as-is and publishes it to GitHub Pages.
+
+## Replacing a sticker
+
+Stickers are cache-busted via a version query string. After swapping a file in
+`images/`, bump `ASSET_VERSION` in `index.html` so browsers refetch it.

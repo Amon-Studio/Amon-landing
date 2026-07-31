@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Amon</title>
+  <meta name="description" content="Amon Studio Privacy Policy" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root { --bg: #ffffff; --ink: #1a1a1a; --muted: #8a8a8a; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      font-family: "Arimo", Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Grain subtil sur le fond (texture SVG inline, derrière le contenu) */
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.1;                 /* ← force du grain (0 = aucun, 1 = max) */
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='120'%20height='120'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.9'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    main {
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: clamp(2rem, 8vh, 7rem) clamp(1.5rem, 6vw, 3.5rem) clamp(4rem, 12vh, 8rem);
+      animation: pageFadeIn 0.6s ease both;
+    }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* Croix de fermeture (retour home) en haut à droite */
+    .close {
+      position: fixed;
+      top: clamp(1.25rem, 3vw, 2rem);
+      right: clamp(1.25rem, 3vw, 2rem);
+      z-index: 10;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      border-radius: 999px;
+      transition: background 0.15s ease;
+    }
+    .close:hover { background: #f2f2f2; }
+    .close svg { display: block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .effective { color: var(--muted); font-style: italic; margin-bottom: 2.5rem; }
+
+    h2 { font-size: 1.15rem; font-weight: 700; margin: 2.25rem 0 0.75rem; }
+    p { margin-bottom: 1rem; }
+    ul { margin: 0 0 1rem 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    a { color: var(--ink); }
+
+    footer {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid #eee;
+    }
+
+    footer nav { display: flex; gap: 1.75rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.15s ease; }
+    footer a:hover { color: var(--ink); }
+
+    @media (max-width: 520px) {
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <a class="close" href="index.html" aria-label="Back to home" title="Back to home">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+      <line x1="5" y1="5" x2="19" y2="19"></line>
+      <line x1="19" y1="5" x2="5" y2="19"></line>
+    </svg>
+  </a>
+
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="effective">Effective Date: Jul 22, 2026</p>
+
+    <p>This Privacy Policy explains how Amon Studio (“Amon Studio,” “we,” “us,” or “our”) collects, uses, and protects your information when you use our applications and services. By using our apps, you agree to the practices described in this policy.</p>
+
+    <h2>Information We Collect</h2>
+    <p>We collect the following categories of information:</p>
+    <ul>
+      <li><strong>Account information.</strong> Information you provide when you create an account, such as a username, email address, or profile details.</li>
+      <li><strong>User content.</strong> Photos, comments, reactions, and other content you choose to post within our apps.</li>
+      <li><strong>Purchase information.</strong> When you make an in-app purchase, the transaction is processed by Apple. We receive confirmation of the purchase but never receive or store your payment card details.</li>
+      <li><strong>Usage and device information.</strong> Technical information such as device type, operating system, app version, and how you interact with our apps, collected to operate and improve our services.</li>
+    </ul>
+
+    <h2>How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, maintain, and improve our apps and features;</li>
+      <li>Deliver your user content to the recipients you have chosen within the app;</li>
+      <li>Process in-app purchases and manage your account;</li>
+      <li>Detect, prevent, and address objectionable content, abuse, fraud, and security issues;</li>
+      <li>Comply with legal obligations and enforce our Terms of Use.</li>
+    </ul>
+
+    <h2>We Do Not Train AI on Your Content</h2>
+    <p>We do not use your user content to train artificial intelligence models. Your content is used solely to deliver it to the recipients you have chosen within the app, as described in our Terms of Use.</p>
+
+    <h2>How We Share Information</h2>
+    <p>We do not sell your personal information. We share information only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>With other users,</strong> where you choose to post user content intended to be visible to them;</li>
+      <li><strong>With service providers</strong> who help us operate our apps (such as hosting and analytics providers), under obligations of confidentiality;</li>
+      <li><strong>With Apple,</strong> which processes all in-app purchases under its own terms and privacy policy;</li>
+      <li><strong>When required by law,</strong> or to protect the rights, safety, and security of our users, the public, or Amon Studio.</li>
+    </ul>
+
+    <h2>Content Moderation and Safety</h2>
+    <p>To keep our services safe, we use automated and manual systems to detect and filter objectionable content, provide in-app reporting and blocking tools, and review reports. We may access, review, and remove content in connection with these safety measures, as described in our Terms of Use.</p>
+
+    <h2>Data Retention</h2>
+    <p>We retain your information for as long as your account remains active or as needed to provide our services. We may retain certain information for longer where required to comply with legal obligations, resolve disputes, or enforce our agreements. When information is no longer needed, we take reasonable steps to delete or anonymize it.</p>
+
+    <h2>Security</h2>
+    <p>We implement reasonable technical and organizational measures designed to protect your information against unauthorized access, loss, or misuse. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+
+    <h2>Children’s Privacy</h2>
+    <p>Our apps are not directed to children below the age required by applicable law in their jurisdiction, and we do not knowingly collect personal information from them. If you believe a child has provided us with personal information, please contact us so we can take appropriate action. Minors may only make in-app purchases with the consent and supervision of a parent or legal guardian.</p>
+
+    <h2>Your Rights</h2>
+    <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or restrict the processing of your personal information, or to object to certain uses. To exercise these rights, please contact us using the details below. You may also delete your account at any time from within the app.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will provide notice of material changes through our apps or other reasonable means. Your continued use of our apps after such changes constitutes acceptance of the updated policy.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy or our data practices, please contact us at: <a href="mailto:contact@amonstudio.io">contact@amonstudio.io</a></p>
+  </main>
+
+  <footer>
+    <span>© 2026 Amon Studio. All rights reserved.</span>
+    <nav>
+      <a href="mailto:contact@amonstudio.io">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </footer>
+</body>
+</html>

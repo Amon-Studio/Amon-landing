@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — Amon</title>
+  <meta name="description" content="Amon Studio Terms of Use" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root { --bg: #ffffff; --ink: #1a1a1a; --muted: #8a8a8a; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      font-family: "Arimo", Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Grain subtil sur le fond (texture SVG inline, derrière le contenu) */
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.1;                 /* ← force du grain (0 = aucun, 1 = max) */
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='120'%20height='120'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.9'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    main {
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: clamp(2rem, 8vh, 7rem) clamp(1.5rem, 6vw, 3.5rem) clamp(4rem, 12vh, 8rem);
+      animation: pageFadeIn 0.6s ease both;
+    }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* Croix de fermeture (retour home) en haut à droite */
+    .close {
+      position: fixed;
+      top: clamp(1.25rem, 3vw, 2rem);
+      right: clamp(1.25rem, 3vw, 2rem);
+      z-index: 10;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      border-radius: 999px;
+      transition: background 0.15s ease;
+    }
+    .close:hover { background: #f2f2f2; }
+    .close svg { display: block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .effective {
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 2.25rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1rem; }
+
+    ul { margin: 0 0 1rem 1.5rem; }
+
+    li { margin-bottom: 0.4rem; }
+
+    a { color: var(--ink); }
+
+    footer {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid #eee;
+    }
+
+    footer nav { display: flex; gap: 1.75rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.15s ease; }
+    footer a:hover { color: var(--ink); }
+
+    @media (max-width: 520px) {
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <a class="close" href="index.html" aria-label="Back to home" title="Back to home">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+      <line x1="5" y1="5" x2="19" y2="19"></line>
+      <line x1="19" y1="5" x2="5" y2="19"></line>
+    </svg>
+  </a>
+
+  <main>
+    <h1>Terms of Use</h1>
+    <p class="effective">Effective Date: Nov 20, 2025</p>
+
+    <p>Welcome to Amon Studio. These Terms of Use govern your access to and use of our applications and services. By downloading, installing, or using our apps, you agree to be bound by these terms.</p>
+
+    <h2>Acceptance of Terms</h2>
+    <p>By accessing or using any Amon Studio application, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use and our Privacy Policy. If you do not agree to these terms, you must not use our services.</p>
+
+    <h2>License Grant</h2>
+    <p>Subject to your compliance with these Terms, Amon Studio grants you a limited, non-exclusive, non-transferable, revocable license to:</p>
+    <ul>
+      <li>Download and install our apps on devices you own or control</li>
+      <li>Use our apps for personal, non-commercial purposes</li>
+      <li>Access and use features and content within our apps</li>
+    </ul>
+
+    <h2>In-App Purchases and Virtual Currency</h2>
+    <p>Some Amon Studio apps offer optional in-app purchases, including consumable virtual currency (“Coins”) that can be used to access content or features within the app.</p>
+    <p><strong>Purchases through Apple.</strong> All in-app purchases are processed by Apple through the App Store’s in-app purchase system. Billing, payment processing, and payment security are handled exclusively by Apple under Apple’s own terms and conditions. Amon Studio never receives or stores your payment card details.</p>
+    <p><strong>Nature of Coins.</strong> Coins are a limited, non-exclusive, non-transferable, revocable license to access content or features within the app. Coins have no monetary value, are not your personal property, and cannot be redeemed, exchanged, or refunded for cash or any other real-world value. Coins cannot be transferred to another user or another account. Coins do not expire as long as your account remains active.</p>
+    <p><strong>Refunds.</strong> Coins are consumable items and all purchases are final, except where a refund is required by applicable law or granted by Apple. Refund requests must be submitted directly to Apple at reportaproblem.apple.com, in accordance with Apple’s refund policy. Amon Studio does not process refunds directly.</p>
+    <p><strong>Pricing.</strong> Prices for Coin packs are displayed in the app before purchase and may vary by region. We reserve the right to change the price of Coin packs, the amount of Coins granted, or the Coin cost of content or features at any time. Such changes will not affect Coins already purchased.</p>
+    <p><strong>Changes and discontinuation.</strong> We reserve the right to modify, suspend, or discontinue any app, feature, or the virtual currency system at any time. If we permanently discontinue an app or its virtual currency system, we will provide reasonable advance notice through the app or other reasonable means. Coins hold no monetary value and no compensation will be owed for unused Coins, except where required by applicable law.</p>
+    <p><strong>Termination.</strong> If your account is terminated for violation of these Terms, any unused Coins are forfeited without refund or compensation.</p>
+    <p><strong>Minors.</strong> If you are a minor in your jurisdiction, you may only make in-app purchases with the consent and supervision of a parent or legal guardian.</p>
+
+    <h2>User-Generated Content</h2>
+    <p>Some Amon Studio apps let you post photos, comments, reactions, and other content visible to other users (“User Content”). You retain ownership of your User Content. By posting it, you grant Amon Studio a worldwide, non-exclusive, royalty-free license to host, store, and display your User Content solely to deliver it to the recipients you have chosen within the app. We do not use your User Content for any other purpose, and we do not use it to train artificial intelligence models. You represent that you own or have all necessary rights to the User Content you post and that it does not infringe any third-party rights.</p>
+
+    <h2>Zero Tolerance for Objectionable Content and Abusive Behavior</h2>
+    <p>Amon Studio has zero tolerance for objectionable content and abusive users. You agree not to post, share, or transmit any content, and not to engage in any behavior, that:</p>
+    <ul>
+      <li>is sexually explicit, pornographic, sexually exploitative, or contains nudity;</li>
+      <li>sexually exploits or endangers minors in any way, including child sexual abuse material (CSAM);</li>
+      <li>depicts or promotes violence, self-harm, or threats;</li>
+      <li>constitutes hate speech, harassment, bullying, stalking, or intimidation;</li>
+      <li>promotes illegal activity, dangerous behavior, or regulated substances;</li>
+      <li>contains spam, scams, phishing, malware, or deceptive content;</li>
+      <li>impersonates another person or entity;</li>
+      <li>infringes the intellectual property, privacy, or other rights of any third party.</li>
+    </ul>
+
+    <h2>Content Moderation</h2>
+    <p>To enforce this policy, Amon Studio uses the following measures:</p>
+    <p><strong>Filtering.</strong> We use automated and manual systems to detect and filter objectionable content. We reserve the right to review, screen, and remove any User Content at our sole discretion, at any time, without notice.</p>
+    <p><strong>Reporting.</strong> Every piece of User Content includes an in-app mechanism allowing you to report objectionable content to Amon Studio.</p>
+    <p><strong>Blocking.</strong> You may block any user at any time from within the app. Blocking a user immediately removes that user’s content from your feed and notifies Amon Studio of the block so that the reported user can be reviewed.</p>
+    <p><strong>Action within 24 hours.</strong> Amon Studio reviews reports and blocks and acts on them within 24 hours: offending content is removed and offending users are ejected from the service, without notice and without refund.</p>
+    <p>We may also remove content or terminate accounts at our sole discretion when we identify violations of these Terms.</p>
+
+    <h2>Prohibited Conduct</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Reverse engineer, decompile, or disassemble our applications</li>
+      <li>Use our apps for any illegal or unauthorized purpose</li>
+      <li>Attempt to gain unauthorized access to our systems or networks</li>
+      <li>Upload or transmit malicious code, viruses, or harmful content</li>
+      <li>Violate any applicable laws or regulations</li>
+      <li>Interfere with the proper functioning of our apps</li>
+      <li>Remove or modify any copyright notices or proprietary markings</li>
+      <li>Post, share, or transmit any objectionable content, or engage in abusive behavior toward other users</li>
+    </ul>
+
+    <h2>Intellectual Property Rights</h2>
+    <p>All content, features, and functionality of our apps, including but not limited to text, graphics, logos, icons, images, audio clips, and software, are the exclusive property of Amon Studio and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written permission.</p>
+
+    <h2>Termination</h2>
+    <p>We may terminate or suspend your access to our apps at any time, with or without notice, for any reason, including violation of these Terms. Upon termination, you must immediately cease using our apps and delete all copies from your devices. Sections of these Terms that by their nature should survive termination will remain in effect. Violations of our User-Generated Content policy will result in immediate suspension or termination of your account.</p>
+
+    <h2>Disclaimers</h2>
+    <p>Our apps are provided "as is" and "as available" without warranties of any kind, either express or implied. We disclaim all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that our apps will be uninterrupted, error-free, or completely secure.</p>
+
+    <h2>Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, Amon Studio shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, arising out of or relating to your use of our apps, even if we have been advised of the possibility of such damages.</p>
+
+    <h2>Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles. Any disputes arising under these Terms shall be resolved through binding arbitration or in courts of competent jurisdiction.</p>
+
+    <h2>Changes to Terms</h2>
+    <p>We reserve the right to modify these Terms at any time. We will provide notice of material changes through our apps or other reasonable means. Your continued use of our apps after such changes constitutes acceptance of the modified Terms.</p>
+
+    <h2>Contact Information</h2>
+    <p>If you have any questions about these Terms of Use, please contact us at: <a href="mailto:contact@amonstudio.io">contact@amonstudio.io</a></p>
+  </main>
+
+  <footer>
+    <span>© 2026 Amon Studio. All rights reserved.</span>
+    <nav>
+      <a href="mailto:contact@amonstudio.io">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </footer>
+</body>
+</html>

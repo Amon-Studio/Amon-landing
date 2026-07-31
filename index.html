@@ -1,41 +1,451 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amon Studio - Premium iOS App Development</title>
-    <meta name="description" content="Amon Studio creates premium iOS applications with exceptional design and performance." />
-    <meta name="author" content="Amon Studio" />
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amon</title>
+  <meta name="description" content="Amon" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 
-    <meta property="og:title" content="Amon Studio - Premium iOS App Development" />
-    <meta property="og:description" content="Amon Studio creates premium iOS applications with exceptional design and performance." />
-    <meta property="og:type" content="website" />
+  <!-- Précharge les stickers (basse priorité : pas critiques pour le premier rendu) -->
+  <link rel="preload" as="image" fetchpriority="low" href="images/01.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/02.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/03.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/04.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/05.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/06.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/07.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/08.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/09.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/10.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/11.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/12.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/13.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/14.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/15.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/16.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/17.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/18.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/19.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/20.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/21.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/22.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/23.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/24.png?v=4" />
+  <link rel="preload" as="image" fetchpriority="low" href="images/25.png?v=4" />
+  <style>
+    :root {
+      --bg: #ffffff;
+    }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@amonstudio" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  </head>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <body>
-    <div id="root"></div>
-    <!-- GitHub Pages SPA Script -->
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+      background-attachment: fixed;
+      font-family: "Arimo", Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Grain subtil sur le fond (texture SVG inline, derrière le contenu) */
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.1;                 /* ← force du grain (0 = aucun, 1 = max) */
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='120'%20height='120'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.9'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    main {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* Bouton d'activation du gyroscope (mobile uniquement, affiché via JS) */
+    /* Positionné en absolu sous le logo pour ne jamais influencer son centrage vertical */
+    .gyro-activate {
+      display: none;
+      position: absolute;
+      top: calc(100% + 1.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      padding: 0.5rem 1.1rem;
+      border: 1px solid #d8d8d8;
+      border-radius: 999px;
+      background: transparent;
+      color: #8a8a8a;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gyro-activate:active {
+      color: #1a1a1a;
+    }
+
+    /* Conteneur du logo : centré sur la fenêtre entière (pas juste l'espace
+       au-dessus du footer), porte la largeur fluide */
+    .logo-wrap {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(180px, 22vw, 300px);
+      z-index: 1;
+      text-align: center;
+    }
+
+    .logo {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+      -webkit-user-drag: none;
+      margin: 0 auto;
+    }
+
+    /* Phrase d'accroche sous le logo : dimensionnée à son contenu et
+       recentrée, pour ne pas être bridée par la largeur étroite du logo */
+    .tagline {
+      display: none; /* masquée pour le moment */
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      max-width: 90vw;
+      /* logo.png embarque une grosse marge transparente sous le tracé visible ;
+         on la compense (~24.3% de la largeur du logo) avant d'ajouter le vrai espace voulu */
+      margin-top: calc(-24.3% + 24px);
+      font-family: "Arimo", Arial, Helvetica, sans-serif;
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
+      font-weight: 500;
+      color: #8a8a8a;
+      line-height: 1.3;
+      text-align: center;
+      text-transform: none;
+    }
+
+    /* CTA pour faire défiler les phrases d'accroche : vit avec les CTAs du footer */
+    .tagline-switch {
+      display: none; /* masqué pour le moment, avec la baseline */
+      padding: 0;
+      border: none;
+      background: none;
+      color: #8a8a8a;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .tagline-switch:hover,
+    .tagline-switch:active {
+      color: #1a1a1a;
+    }
+
+    /* Fade-in du logo à l'ouverture du site */
+    body.intro-active .logo { opacity: 0; }
+    @keyframes amonFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .logo.intro-in { animation: amonFadeIn 0.9s ease both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      body.intro-active .logo { opacity: 1; }
+    }
+
+    /* Calque de la traînée d'images : occupe tout l'écran, AU-DESSUS du logo */
+    .trail {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .trail__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: clamp(80px, 8vw, 130px);
+      height: auto;
+      will-change: transform, opacity;
+      opacity: 0;
+      /* Positionné et animé via JS ; translate3d pour rester sur le GPU */
+    }
+
+    /* On garde le footer lisible et cliquable au-dessus de la traînée */
+    footer { position: relative; z-index: 3; }
+
+    footer {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+      font-size: 0.8125rem;
+      color: #8a8a8a;
+    }
+
+    footer nav {
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    footer a {
+      color: #8a8a8a;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    footer a:hover {
+      color: #1a1a1a;
+    }
+
+    @media (max-width: 520px) {
+      footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+
+      footer nav {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="trail" aria-hidden="true"></div>
+
+  <main>
+    <div class="logo-wrap">
+      <img class="logo" src="logo.png" alt="Amon" />
+      <p class="tagline">Rebuilding social</p>
+      <button type="button" class="gyro-activate">Enter</button>
+    </div>
+  </main>
+  <footer>
+    <span>© 2026 Amon Studio. All rights reserved.</span>
+    <nav>
+      <a href="mailto:contact@amonstudio.io">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <button type="button" class="tagline-switch" aria-label="Voir une autre phrase">↻</button>
+    </nav>
+  </footer>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      var coarsePointer = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+      var TOTAL = 25;                 // nombre d'images dans images/
+      var ASSET_VERSION = "4";        // ↑ à incrémenter quand on remplace une image (force le rechargement, contourne le cache)
+
+      // Construit l'URL d'une image (1-based) avec le paramètre de version anti-cache
+      function imgUrl(n) {
+        return "images/" + String(n).padStart(2, "0") + ".png?v=" + ASSET_VERSION;
+      }
+
+      // ---------------------------------------------------------------
+      // TAGLINE — CTA pour faire défiler les phrases d'accroche
+      // ---------------------------------------------------------------
+      var TAGLINES = [
+        "Rebuilding social",
+        "Building closer",
+        "The next social",
+        "Social, rebuilt",
+        "Building people closer"
+      ];
+      var taglineIndex = 0;
+      var taglineEl = document.querySelector(".tagline");
+      var taglineBtn = document.querySelector(".tagline-switch");
+      if (taglineEl && taglineBtn) {
+        taglineBtn.addEventListener("click", function () {
+          taglineIndex = (taglineIndex + 1) % TAGLINES.length;
+          taglineEl.textContent = TAGLINES[taglineIndex];
+        });
+      }
+
+      // ---------------------------------------------------------------
+      // INTRO — simple fade-in du logo à l'ouverture
+      // ---------------------------------------------------------------
+      var logo = document.querySelector(".logo");
+      document.body.classList.add("intro-active");
+      void logo.offsetWidth;                        // reflow avant de lancer l'anim
+      logo.classList.add("intro-in");
+
+      // ---------------------------------------------------------------
+      // EFFET INTERACTIF — traînée de stickers au mouvement (souris ou gyroscope)
+      // ---------------------------------------------------------------
+      function initInteractiveEffect() {
+        if (reduce || (!finePointer && !coarsePointer)) return;
+
+        var THRESHOLD = 12;             // distance (px) à parcourir avant de poser l'image suivante — très réactif
+        var LIFETIME = 2000;            // durée d'affichage de chaque image (ms)
+        var POOL_SIZE = 60;             // pool large : couvre les images qui coexistent pendant leur durée de vie
+        var container = document.querySelector(".trail");
+
+        // Précharge + crée un pool d'éléments <img> réutilisables
+        var pool = [];
+        for (var i = 0; i < POOL_SIZE; i++) {
+          var img = document.createElement("img");
+          img.className = "trail__img";
+          img.src = imgUrl((i % TOTAL) + 1);
+          img.alt = "";
+          container.appendChild(img);
+          pool.push(img);
         }
-      }(window.location))
-    </script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+        var lastX = null, lastY = null;   // dernière position où une image a été posée
+        var lastImg = -1;                 // dernière image tirée (évite deux fois la même d'affilée)
+        var poolIndex = 0;                // quel élément DOM on recycle
+        var zTop = 1;                     // z-index croissant pour empiler la plus récente au-dessus
+
+        // Zone franche : bande au-dessus du footer où aucune image n'apparaît
+        // (pour survoler/cliquer Privacy & Terms tranquillement)
+        var footerEl = document.querySelector("footer");
+        var SAFE_PAD = 16;                // marge (px) au-dessus du footer
+        var safeTop = Infinity;
+        function updateSafeZone() {
+          if (footerEl) safeTop = footerEl.getBoundingClientRect().top - SAFE_PAD;
+        }
+        updateSafeZone();
+        window.addEventListener("resize", updateSafeZone, { passive: true });
+
+        // Tire une image au hasard, jamais la même que la précédente
+        function pickImage() {
+          var n;
+          do { n = Math.floor(Math.random() * TOTAL); } while (TOTAL > 1 && n === lastImg);
+          lastImg = n;
+          return n;
+        }
+
+        function spawn(x, y) {
+          var el = pool[poolIndex];
+          poolIndex = (poolIndex + 1) % POOL_SIZE;
+
+          // Image choisie aléatoirement (ordre différent à chaque fois)
+          el.src = imgUrl(pickImage() + 1);
+
+          // Rotation aléatoire pour un rendu vivant
+          var rot = Math.random() * 24 - 12; // -12°..+12°
+
+          // Apparition INSTANTANÉE : aucune transition, pleine taille, pleine opacité, direct
+          el.style.transition = "none";
+          el.style.zIndex = zTop++;
+          el.style.transform =
+            "translate3d(" + (x - el.offsetWidth / 2) + "px," +
+            (y - el.offsetHeight / 2) + "px, 0) rotate(" + rot + "deg)";
+          el.style.opacity = "1";
+
+          // Disparition INSTANTANÉE après LIFETIME (pas de fade-out : on coupe net)
+          clearTimeout(el._hideTimer);
+          el._hideTimer = setTimeout(function () {
+            el.style.transition = "none";
+            el.style.opacity = "0";
+          }, LIFETIME);
+        }
+
+        function clamp(v, min, max) { return Math.min(max, Math.max(min, v)); }
+
+        // ---- Souris (desktop, pointeur fin) ----
+        if (finePointer) {
+          window.addEventListener("mousemove", function (e) {
+            var x = e.clientX, y = e.clientY;
+
+            // Dans la zone franche du footer : on ne pose rien, mais on suit la position
+            if (y >= safeTop) { lastX = x; lastY = y; return; }
+
+            if (lastX === null) { lastX = x; lastY = y; spawn(x, y); return; }
+
+            var dx = x - lastX, dy = y - lastY;
+            if (Math.sqrt(dx * dx + dy * dy) > THRESHOLD) {
+              spawn(x, y);
+              lastX = x;
+              lastY = y;
+            }
+          }, { passive: true });
+        }
+
+        // ---- Gyroscope (mobile, pas de hover / pointeur grossier) ----
+        // Repose sur un calibrage : la position au moment de l'activation
+        // devient le centre, puis on mappe l'écart d'inclinaison sur tout
+        // l'écran (gamma = gauche/droite → x, beta = avant/arrière → y).
+        if (coarsePointer && typeof window.DeviceOrientationEvent !== "undefined") {
+          var btn = document.querySelector(".gyro-activate");
+          if (btn) {
+            btn.style.display = "inline-flex";
+            btn.addEventListener("click", function onActivate() {
+              btn.removeEventListener("click", onActivate);
+
+              function startGyro() {
+                btn.remove();
+                var RANGE = 30; // amplitude (°) depuis le calibrage pour couvrir tout l'écran
+
+                window.addEventListener("deviceorientation", function (e) {
+                  if (e.beta === null || e.gamma === null) return;
+                  if (baseBeta === null) { baseBeta = e.beta; baseGamma = e.gamma; return; }
+
+                  var nx = clamp(((e.gamma - baseGamma) + RANGE) / (RANGE * 2), 0, 1);
+                  var ny = clamp(((e.beta - baseBeta) + RANGE) / (RANGE * 2), 0, 1);
+                  var x = nx * window.innerWidth;
+                  var y = ny * window.innerHeight;
+
+                  if (y >= safeTop) { lastX = x; lastY = y; return; }
+                  if (lastX === null) { lastX = x; lastY = y; spawn(x, y); return; }
+                  var dx = x - lastX, dy = y - lastY;
+                  if (Math.sqrt(dx * dx + dy * dy) > THRESHOLD) {
+                    spawn(x, y);
+                    lastX = x;
+                    lastY = y;
+                  }
+                }, { passive: true });
+              }
+
+              var baseBeta = null, baseGamma = null;
+
+              if (typeof DeviceOrientationEvent.requestPermission === "function") {
+                DeviceOrientationEvent.requestPermission().then(function (state) {
+                  if (state === "granted") startGyro();
+                }).catch(function () {});
+              } else {
+                startGyro();
+              }
+            });
+          }
+        }
+      }
+
+      initInteractiveEffect();
+    })();
+  </script>
+</body>
 </html>
