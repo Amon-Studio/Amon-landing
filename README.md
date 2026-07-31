@@ -11,9 +11,10 @@ privacy.html          Privacy Policy
 terms.html            Terms of Service
 404.html              Not-found page
 images/01..26.png     Stickers used by the trail effect
-logo.png              Amon wordmark
-favicon.png           Favicon
-apple-touch-icon.png  iOS home-screen icon
+logo.png              Amon wordmark (900px wide — 3x its 300px max display size)
+og.png                1200x630 social share card
+favicon.png           Favicon (48x48)
+apple-touch-icon.png  iOS home-screen icon (180x180)
 robots.txt            Crawl rules
 sitemap.xml           Sitemap
 .nojekyll             Disables Jekyll processing
@@ -50,6 +51,24 @@ custom domain in Settings → Pages (which recreates the `CNAME` file):
 | --- | --- | --- |
 | A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
 | CNAME | `www` | `amon-studio.github.io` |
+
+## SEO
+
+Each page carries a unique title and description, a `canonical` link, Open Graph +
+Twitter card tags pointing at `og.png`, and `theme-color`. The home page also has a
+single `<h1>` (wrapping the wordmark, whose `alt` carries the text) and an
+`Organization` JSON-LD block.
+
+Absolute URLs (`canonical`, `og:url`, `og:image`, `sitemap.xml`, `robots.txt`) all
+point at **`https://amonstudio.io`**, the intended production home — so the DNS
+switch below needs no code change. Until it happens, those URLs resolve to the
+Framer site, and the Pages URL above is staging.
+
+To stage on the Pages URL instead:
+
+```bash
+grep -rl amonstudio.io --include='*.html' --include='*.xml' --include='*.txt' . | xargs sed -i '' 's|https://amonstudio.io|https://amon-studio.github.io/Amon-landing|g'
+```
 
 ## Replacing a sticker
 

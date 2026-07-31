@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amon-studio.github.io/Amon-landing/sitemap.xml
+Sitemap: https://amonstudio.io/sitemap.xml
