@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amon</title>
+  <meta name="description" content="Amon. Building something new." />
   <link rel="canonical" href="https://amonstudio.io/" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -12,6 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Amon" />
   <meta property="og:title" content="Amon" />
+  <meta property="og:description" content="Amon. Building something new." />
   <meta property="og:url" content="https://amonstudio.io/" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://amonstudio.io/og.png" />
@@ -133,46 +135,6 @@
       margin: 0 auto;
     }
 
-    /* Phrase d'accroche sous le logo : dimensionnée à son contenu et
-       recentrée, pour ne pas être bridée par la largeur étroite du logo */
-    .tagline {
-      display: none; /* masquée pour le moment */
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      width: max-content;
-      max-width: 90vw;
-      /* logo.png embarque une grosse marge transparente sous le tracé visible ;
-         on la compense (~24.3% de la largeur du logo) avant d'ajouter le vrai espace voulu */
-      margin-top: calc(-24.3% + 24px);
-      font-family: "Arimo", Arial, Helvetica, sans-serif;
-      font-size: clamp(0.875rem, 2vw, 1.125rem);
-      font-weight: 500;
-      color: #8a8a8a;
-      line-height: 1.3;
-      text-align: center;
-      text-transform: none;
-    }
-
-    /* CTA pour faire défiler les phrases d'accroche : vit avec les CTAs du footer */
-    .tagline-switch {
-      display: none; /* masqué pour le moment, avec la baseline */
-      padding: 0;
-      border: none;
-      background: none;
-      color: #8a8a8a;
-      font-family: inherit;
-      font-size: inherit;
-      line-height: inherit;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .tagline-switch:hover,
-    .tagline-switch:active {
-      color: #1a1a1a;
-    }
-
     /* Fade-in du logo à l'ouverture du site */
     body.intro-active .logo { opacity: 0; }
     @keyframes amonFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -251,7 +213,6 @@
   <main>
     <div class="logo-wrap">
       <h1><img class="logo" src="logo.png" alt="Amon" width="900" height="676" fetchpriority="high" /></h1>
-      <p class="tagline">Rebuilding social</p>
     </div>
   </main>
   <footer>
@@ -260,7 +221,6 @@
       <a href="mailto:contact@amonstudio.io">Contact</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
-      <button type="button" class="tagline-switch" aria-label="Voir une autre phrase">↻</button>
     </nav>
   </footer>
 
@@ -274,26 +234,6 @@
       // Construit l'URL d'une image (1-based) avec le paramètre de version anti-cache
       function imgUrl(n) {
         return "images/" + String(n).padStart(2, "0") + ".png?v=" + ASSET_VERSION;
-      }
-
-      // ---------------------------------------------------------------
-      // TAGLINE — CTA pour faire défiler les phrases d'accroche
-      // ---------------------------------------------------------------
-      var TAGLINES = [
-        "Rebuilding social",
-        "Building closer",
-        "The next social",
-        "Social, rebuilt",
-        "Building people closer"
-      ];
-      var taglineIndex = 0;
-      var taglineEl = document.querySelector(".tagline");
-      var taglineBtn = document.querySelector(".tagline-switch");
-      if (taglineEl && taglineBtn) {
-        taglineBtn.addEventListener("click", function () {
-          taglineIndex = (taglineIndex + 1) % TAGLINES.length;
-          taglineEl.textContent = TAGLINES[taglineIndex];
-        });
       }
 
       // ---------------------------------------------------------------
