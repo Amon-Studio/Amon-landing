@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Amon</title>
+  <meta name="description" content="Get help with Amon Studio apps: contact us, manage purchases and subscriptions, delete your account, report content." />
+  <link rel="canonical" href="https://amonstudio.io/support.html" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Amon" />
+  <meta property="og:title" content="Support — Amon" />
+  <meta property="og:description" content="Get help with Amon Studio apps: contact us, manage purchases and subscriptions, delete your account, report content." />
+  <meta property="og:url" content="https://amonstudio.io/support.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://amonstudio.io/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Amon" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root { --bg: #ffffff; --ink: #1a1a1a; --muted: #8a8a8a; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      font-family: "Arimo", Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Grain subtil sur le fond (texture SVG inline, derrière le contenu) */
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.1;                 /* ← force du grain (0 = aucun, 1 = max) */
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='120'%20height='120'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.9'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    main {
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: clamp(2rem, 8vh, 7rem) clamp(1.5rem, 6vw, 3.5rem) clamp(4rem, 12vh, 8rem);
+      animation: pageFadeIn 0.6s ease both;
+    }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* Croix de fermeture (retour home) en haut à droite */
+    .close {
+      position: fixed;
+      top: clamp(1.25rem, 3vw, 2rem);
+      right: clamp(1.25rem, 3vw, 2rem);
+      z-index: 10;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      border-radius: 999px;
+      transition: background 0.15s ease;
+    }
+    .close:hover { background: #f2f2f2; }
+    .close svg { display: block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .effective {
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 2.25rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1rem; }
+
+    ul { margin: 0 0 1rem 1.5rem; }
+
+    li { margin-bottom: 0.4rem; }
+
+    a { color: var(--ink); }
+
+    .contact-card {
+      border: 1px solid #e6e6e6;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1.25rem 1.5rem;
+      margin: 0 0 1rem;
+    }
+    .contact-card p { margin-bottom: 0.75rem; }
+    .contact-card p:last-child { margin-bottom: 0; }
+    .button {
+      display: inline-block;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      transition: opacity 0.15s ease;
+    }
+    .button:hover { opacity: 0.8; }
+
+    details { border-top: 1px solid #e6e6e6; }
+    details:last-of-type { border-bottom: 1px solid #e6e6e6; }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      padding: 0.9rem 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--muted); font-weight: 400; }
+    details[open] summary::after { content: "–"; }
+    details > :not(summary) { margin-bottom: 0.9rem; }
+
+    footer {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid #eee;
+    }
+
+    footer nav { display: flex; gap: 1.75rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color 0.15s ease; }
+    footer a:hover { color: var(--ink); }
+
+    @media (max-width: 520px) {
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <a class="close" href="index.html" aria-label="Back to home" title="Back to home">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+      <line x1="5" y1="5" x2="19" y2="19"></line>
+      <line x1="19" y1="5" x2="5" y2="19"></line>
+    </svg>
+  </a>
+
+  <main>
+    <h1>Support</h1>
+
+    <div class="contact-card">
+      <p>Questions, issues or requests? Email us and we will get back to you.</p>
+      <p><a class="button" href="mailto:contact@amonstudio.io?subject=Amon%20support%20request">contact@amonstudio.io</a></p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How do I request a refund?</summary>
+      <p>Purchases are processed by the store you bought from (App Store or Google Play), so refunds are handled by them. Submit your request through your store account. Amon Studio cannot process refunds directly. See our <a href="terms.html">Terms of Use</a> for details.</p>
+    </details>
+
+    <details>
+      <summary>How do I cancel my subscription or free trial?</summary>
+      <p>Subscriptions are managed in your store account, under Subscriptions. Cancel at least 24 hours before the end of the current period to avoid being charged. Deleting the app does not cancel a subscription.</p>
+    </details>
+
+    <details>
+      <summary>I made a purchase but did not receive it</summary>
+      <p>Restart the app and check your connection. Then try the restore purchases option in the app, signed in with the account used for the purchase. If it still does not appear, email us with your purchase receipt.</p>
+    </details>
+
+    <details>
+      <summary>How do I delete my account and my data?</summary>
+      <p>You can delete your account at any time from the app’s settings. If you cannot access the app, email us from the address linked to your account. More details are in our <a href="privacy.html">Privacy Policy</a>.</p>
+    </details>
+
+    <details>
+      <summary>How do I report content or block a user?</summary>
+      <p>Every piece of user content has a report option in the app, and you can block any user from their profile. We act on reports within 24 hours. See our <a href="terms.html">Terms of Use</a>.</p>
+    </details>
+
+    <details>
+      <summary>The app crashes or something looks wrong</summary>
+      <p>Update the app to the latest version, restart your device, and try again. If the problem continues, email us with a description and a screenshot.</p>
+    </details>
+  </main>
+
+  <footer>
+    <span>© 2026 Amon Studio. All rights reserved.</span>
+    <nav>
+      <a href="support.html">Support</a>
+      <a href="mailto:contact@amonstudio.io">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </footer>
+</body>
+</html>
