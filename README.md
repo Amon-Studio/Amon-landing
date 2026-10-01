@@ -9,6 +9,7 @@ Static landing site for Amon Studio, served by GitHub Pages at
 index.html            Home (logo + sticker trail on mouse move / gyroscope)
 privacy.html          Privacy Policy
 terms.html            Terms of Service
+support.html          Support page (App Store Support URL: https://amonstudio.io/support)
 404.html              Not-found page
 CNAME                 Custom domain (amonstudio.io)
 images/01..26.png     Stickers used by the trail effect
